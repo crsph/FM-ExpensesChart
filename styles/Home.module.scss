@@ -65,4 +65,49 @@
     font-weight: config.$FONT_WEIGHT_700;
     margin: 0;
   }
+
+  hr {
+    height: 2px;
+    background-color: config.$CREAM;
+    border: none;
+    margin: 1rem 0;
+  }
+}
+
+.monthly-summary-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.monthly-amount-container {
+  &__label {
+    color: config.$MEDIUM_BROWN;
+    margin: 0;
+  }
+
+  &__amount {
+    color: config.$DARK_BROWN;
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: config.$FONT_WEIGHT_700;
+  }
+}
+
+.monthly-percentage-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: end;
+
+  &__percentage {
+    color: config.$DARK_BROWN;
+    margin: 0;
+    font-weight: config.$FONT_WEIGHT_700;
+  }
+
+  &__label {
+    color: config.$MEDIUM_BROWN;
+    margin: 0;
+  }
 }

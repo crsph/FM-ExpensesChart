@@ -31,10 +31,26 @@ export default function Home() {
           </p>
 
           <hr />
+
+          <div className={styles["monthly-summary-container"]}>
+            <div className={styles["monthly-amount-container"]}>
+              <p className={styles["monthly-amount-container__label"]}>
+                Total this month
+              </p>
+              <p className={styles["monthly-amount-container__amount"]}>
+                $478.33
+              </p>
+            </div>
+            <div className={styles["monthly-percentage-container"]}>
+              <p className={styles["monthly-percentage-container__percentage"]}>
+                +2.4%
+              </p>
+              <p className={styles["monthly-percentage-container__label"]}>
+                fromt last month
+              </p>
+            </div>
+          </div>
         </div>
-
-        {/* <div className={styles[""]}></div> */}
-
       </main>
 
       <footer className={styles["footer"]}>
