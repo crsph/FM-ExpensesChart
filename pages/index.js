@@ -15,11 +15,26 @@ export default function Home() {
       <main className={styles["main"]}>
         <div className={styles["my-balance-container"]}>
           <div className={styles["inner-balance-container"]}>
-            <p>My balance</p>
-            <p>$500.00</p>
+            <p className={styles["inner-balance-container__label"]}>
+              My balance
+            </p>
+            <p className={styles["inner-balance-container__balance"]}>
+              $921.48
+            </p>
           </div>
           <Image src={logo} alt="#" />
         </div>
+
+        <div className={styles["stat-container"]}>
+          <p className={styles["stat-container__label"]}>
+            Spending - Last 7 days
+          </p>
+
+          <hr />
+        </div>
+
+        {/* <div className={styles[""]}></div> */}
+
       </main>
 
       <footer className={styles["footer"]}>
