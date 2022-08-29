@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import logo from "../public/logo.svg";
 
 export default function Home() {
   return (
@@ -13,8 +14,11 @@ export default function Home() {
 
       <main className={styles["main"]}>
         <div className={styles["my-balance-container"]}>
-          <p>My balance</p>
-          <p>$500.00</p>
+          <div className={styles["inner-balance-container"]}>
+            <p>My balance</p>
+            <p>$500.00</p>
+          </div>
+          <Image src={logo} alt="#" />
         </div>
       </main>
 
