@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import logo from "../public/logo.svg";
+import BarStatistic from "../components/BarStatistic";
 
 export default function Home() {
   return (
@@ -51,6 +52,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <BarStatistic />
       </main>
 
       <footer className={styles["footer"]}>
