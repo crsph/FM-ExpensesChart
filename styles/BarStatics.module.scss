@@ -1,14 +1,13 @@
 @use "./config";
 
 
-.bar-container {
+.weekly-stat-container {
     min-width: 100%;
     display: flex;
     justify-content: space-between;
     color: config.$MEDIUM_BROWN;
-}
 
-.bar {
-    // min-width: 100%;
-    // display: flex;
+    &__bar {
+        
+    }
 }

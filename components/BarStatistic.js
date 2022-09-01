@@ -6,9 +6,10 @@ export default function BarStatistic(props) {
 
   return (
     <>
-      <div className={styles["bar-container"]}>
+      <div className={styles["weekly-stat-container"]}>
         {days.map((day, index) => (
-          <div key={index} className={styles["bar"]}>
+          <div key={index}>
+            <div className={styles["weekly-stat-container__bar"]}/>
             {day}
           </div>
         ))}
