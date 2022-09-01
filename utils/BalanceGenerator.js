@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 const maximumAmountSpent = 1000;
 const minimumAmountSpent = 400;
 
-export function BankBalance() {
-  const [bankBalance, setBankBalance] = useState(0);
+export function MonthlySpending() {
+  const [monthlySpending, setMonthlySpending] = useState(0);
 
   useEffect(() => {
     const randomAmount = (
@@ -12,28 +12,12 @@ export function BankBalance() {
       minimumAmountSpent
     ).toFixed(2);
 
-    setBankBalance(randomAmount);
+    setMonthlySpending(randomAmount);
   }, []);
 
   return (
     <>
-      <span>${bankBalance}</span>
+      <span>${monthlySpending}</span>
     </>
   );
-}
-
-export function MonthSpendingBalance() {
-  const [monthlySpendingBalance, setMonthlySpending] = useState(0);
-
-  useEffect(() => {
-    const monthlySpending = BankBalance * 0.4.toFixed(2);
-
-    setMonthlySpending(monthlySpending);
-  }, [])
-
-  return (
-    <>
-      <span>${monthlySpendingBalance}</span>
-    </>
-  )
 }

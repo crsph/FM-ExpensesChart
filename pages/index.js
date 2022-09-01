@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import logo from "../public/logo.svg";
 import BarStatistic from "../components/BarStatistic";
-import { BankBalance, MonthSpendingBalance } from "../utils/BalanceGenerator";
+import { MonthlySpending } from "../utils/BalanceGenerator";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
               My balance
             </p>
             <p className={styles["inner-balance-container__balance"]}>
-              <BankBalance />
+              $1000.00
             </p>
           </div>
           <Image src={logo} alt="#" />
@@ -32,7 +32,7 @@ export default function Home() {
             Spending - Last 7 days
           </p>
 
-          <BarStatistic />
+          <BarStatistic spending={MonthlySpending} />
 
           <hr />
 
@@ -42,7 +42,7 @@ export default function Home() {
                 Total this month
               </p>
               <p className={styles["monthly-amount-container__amount"]}>
-                <MonthSpendingBalance />
+                <MonthlySpending />
               </p>
             </div>
             <div className={styles["monthly-percentage-container"]}>
