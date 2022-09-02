@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
+import ExpenseContext from "../components/ContextObject";
 
 const maximumAmountSpent = 1000;
 const minimumAmountSpent = 400;
 
 export function MonthlySpending() {
-  const [monthlySpending, setMonthlySpending] = useState(0);
+  const [monthlyExpense, setMonthlyExpense] = useContext(ExpenseContext);
 
   useEffect(() => {
     const randomAmount = (
@@ -12,12 +13,12 @@ export function MonthlySpending() {
       minimumAmountSpent
     ).toFixed(2);
 
-    setMonthlySpending(randomAmount);
-  }, []);
+    setMonthlyExpense(randomAmount);
+  }, [setMonthlyExpense]);
 
   return (
     <>
-      <span>${monthlySpending}</span>
+      <span>${monthlyExpense}</span>
     </>
   );
 }
