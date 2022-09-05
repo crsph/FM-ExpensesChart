@@ -3,9 +3,14 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import logo from "../public/logo.svg";
 import BarStatistic from "../components/BarStatistic";
-import { MonthlySpending } from "../utils/BalanceGenerator";
+import { getMonthlySpending, MonthlySpending } from "../utils/BalanceGenerator";
+import { useContext } from "react";
+import ExpenseContext from "../components/ContextObject";
 
-export default function Home() {
+export default function Home({ monthlySpending }) {
+  // const [monthlyExpense, setMonthlyExpense] = useContext(ExpenseContext);
+  // console.log(monthlySpending);
+
   return (
     <div className={styles["container"]}>
       <Head>
@@ -32,7 +37,7 @@ export default function Home() {
             Spending - Last 7 days
           </p>
 
-          <BarStatistic spending={MonthlySpending} />
+          <BarStatistic spending={monthlySpending.props.randomAmount} />
 
           <hr />
 
@@ -42,7 +47,7 @@ export default function Home() {
                 Total this month
               </p>
               <p className={styles["monthly-amount-container__amount"]}>
-                <MonthlySpending />
+                ${monthlySpending.props.randomAmount}
               </p>
             </div>
             <div className={styles["monthly-percentage-container"]}>
@@ -71,4 +76,14 @@ export default function Home() {
       </footer>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const monthlySpending = await getMonthlySpending();
+
+  return {
+    props: {
+      monthlySpending,
+    },
+  };
 }
