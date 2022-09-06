@@ -2,12 +2,29 @@
 
 
 .weekly-stat-container {
+    height: 10em;
     min-width: 100%;
     display: flex;
     justify-content: space-between;
     color: config.$MEDIUM_BROWN;
+}
+
+.daily-stat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 2em;
 
     &__bar {
-        
+        height: var(--height);
+        width: 1.8em;
+        background-color: config.$SOFT_RED;
+        border-radius: .25em;
+    }
+
+    p {
+        margin: .5em 0;
+        font-size: .7em;
     }
 }
